@@ -1,0 +1,139 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+/* Container Styles */
+.container {
+  text-align: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+}
+
+/* Title and Status */
+h1 {
+  font-size: 2rem;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.game-status {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Board Styles */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  margin-bottom: 20px;
+}
+
+.cell {
+  background: #f0f0f0;
+  border: 2px solid #ccc;
+  font-size: 2rem;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+}
+
+.cell:hover {
+  background: #e0e0e0;
+}
+
+.cell.taken {
+  pointer-events: none;
+}
+
+/* Button Styles */
+.reset-button {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.reset-button:hover {
+  background: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+  .cell {
+    height: 80px;
+    width: 80px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .game-status {
+    font-size: 1rem;
+  }
+
+  .reset-button {
+    font-size: 0.9rem;
+  }
+}
+
+/* Classes for Turns */
+.x-turn {
+  color: #007bff; /* Blue for X */
+  font-weight: bold;
+}
+
+.o-turn {
+  color: #ff5722; /* Orange for O */
+  font-weight: bold;
+}
+
+/* Highlight the winning row, column, or diagonal */
+.winner {
+  border: 2px solid #2196f3; /* Soft blue border for winner */
+  background-color: rgba(33, 150, 243, 0.2); /* Light blue background */
+  box-shadow: 0 0 2px rgba(33, 150, 243, 0.5); /* Very thin blue glow */
+  transition: all 0.3s ease;
+}
+
+.winner:hover {
+  background-color: rgba(
+    33,
+    150,
+    243,
+    0.4
+  ); /* Slightly brighter blue on hover */
+  box-shadow: 0 0 2px rgba(33, 150, 243, 0.7); /* Slightly stronger thin glow on hover */
+}
+
+@keyframes highlight {
+  0% {
+    background-color: rgba(33, 150, 243, 0.2);
+  }
+  50% {
+    background-color: rgba(33, 150, 243, 0.6); /* Brighter blue color */
+  }
+  100% {
+    background-color: rgba(33, 150, 243, 0.2);
+  }
+}
